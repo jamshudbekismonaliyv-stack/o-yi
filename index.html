@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <title>Koinot Himoyachisi - Space Defender</title>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- Yuqori panel (HUD) -->
+        <div id="hud">
+            <div class="hud-item">
+                <span class="hud-label">BALL:</span>
+                <span id="scoreVal">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">JON:</span>
+                <span id="livesVal">❤️❤️❤️</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">REKORD:</span>
+                <span id="highScoreVal">0</span>
+            </div>
+        </div>
+
+        <!-- Boshlash ekrani -->
+        <div id="startScreen" class="overlay-screen active">
+            <div class="screen-box">
+                <h1 class="glow-title">🚀 KOINOT HIMOYACHISI</h1>
+                <p class="subtitle">Galaktikani dushmanlar va asteroidlardan himoya qiling!</p>
+                <div class="instructions">
+                    <p>🕹️ <strong>Boshqaruv:</strong></p>
+                    <p>⬅️ ➡️ yoki <b>A / D</b> — Chapga / O'ngga harakat</p>
+                    <p>🚀 <b>Space</b> yoki <b>Sichqoncha</b> — Lazer otish</p>
+                    <p>📱 Mobilda: Ekranni bosib suring</p>
+                </div>
+                <button id="startBtn" class="glow-button">O'YINNI BOSHLASH</button>
+            </div>
+        </div>
+
+        <!-- O'yin tugadi ekrani -->
+        <div id="gameOverScreen" class="overlay-screen">
+            <div class="screen-box">
+                <h1 class="glow-title red">O'YIN TUGADI</h1>
+                <p>To'plagan ballingiz: <span id="finalScore" class="highlight">0</span></p>
+                <p>Eng yuqori rekord: <span id="finalHighScore" class="highlight">0</span></p>
+                <button id="restartBtn" class="glow-button">QAYTA O'YNASH</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./game.js"></script>
+</body>
+</html>

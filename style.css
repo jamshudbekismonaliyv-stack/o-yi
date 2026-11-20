@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    background-color: #050711;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    max-height: 800px;
+    background: #080d1e;
+    box-shadow: 0 0 35px rgba(0, 180, 255, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 220, 255, 0.3);
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Yuqori ko'rsatkichlar (HUD) */
+#hud {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hud-item {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: rgba(0, 15, 35, 0.65);
+    backdrop-filter: blur(4px);
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 200, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hud-label {
+    color: #00d4ff;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+#livesVal {
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+/* Ekranning markazidagi panellar (Modal) */
+.overlay-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 7, 18, 0.88);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    text-align: center;
+}
+
+.overlay-screen.active {
+    display: flex;
+}
+
+.screen-box {
+    padding: 30px;
+    width: 88%;
+    background: rgba(10, 20, 45, 0.7);
+    border: 1px solid rgba(0, 210, 255, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 150, 255, 0.2);
+}
+
+.glow-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #00f2fe;
+    text-shadow: 0 0 15px rgba(0, 242, 254, 0.7);
+    margin-bottom: 12px;
+}
+
+.glow-title.red {
+    color: #ff3366;
+    text-shadow: 0 0 15px rgba(255, 51, 102, 0.8);
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.instructions {
+    background: rgba(2, 6, 23, 0.6);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 13px;
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.instructions p {
+    margin-bottom: 8px;
+}
+
+.instructions p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: #fbbf24;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.glow-button {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    border: none;
+    color: #020914;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+    transition: all 0.25s ease;
+}
+
+.glow-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
+}
+
+.glow-button:active {
+    transform: scale(0.98);
+}
